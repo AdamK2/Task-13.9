@@ -1,6 +1,7 @@
-// Import modułu "os", dołączonego razem z pakietem instalacyjnym "Node.js". 
+// Import modułu "os", dołączonego razem z pakietem instalacyjnym "Node.js":
 var os = require('os');
-var getOStime = require('../modules/OStime');
+// Import danych z modułu "OStime" (w ktorym jest zmienna "getOStime"):
+var OStime = require('../modules/OStime');
 
 function getOSinfo() {
     var type = os.type();
@@ -20,23 +21,17 @@ function getOSinfo() {
     console.log('User name:', userInfo.username);
     console.log('Home dir:', userInfo.homedir);
 }
-/*
-function getOStime2() {		
-	// var time = OStime.print2(os.uptime);
-	function getOStime(uptime) {
-		var uptime = os.uptime();
-	}
-}
-*/
 
 function getOStime2() {
-	var uptime = os.uptime();
-	console.log(getOStime.uptime);	
+	var uptime2 = os.uptime();
+	/* Czas "uptime2" przeliczamy z użyciem zmiennej "getOStime" z zaimportowanego modułu "OStime".
+	   Przeliczony w ten sposób czas przekazujemy do zmiennej "convertedTime". */
+	var convertedTime = OStime.getOStime(uptime2);
 	
-	console.log( "Test" )
+	console.log(convertedTime);
 }
 
-
-// Eksport function getOSinfo()
+// Eksport funkcji getOSinfo():
 exports.print = getOSinfo;
-exports.print3 = getOStime2;
+// Eksport funkcji getOStime2():
+exports.getOStime2 = getOStime2;

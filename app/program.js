@@ -18,15 +18,10 @@ process.stdin.on('readable', function() {
 			case '/getOSinfo':
 				// Użycie zaimportowanych danych z modułu "OSinfo".
 				OSinfo.print();				
-				break;		
-			/* case '/getOStime':
+				break;					
+			case '/getOStime':
 				// Użycie zaimportowanych danych z modułu "OStime".
-				OStime.print2();				
-				break; 
-			*/		
-			case '/getOStime2':
-				// Użycie zaimportowanych danych z modułu "OStime".
-				OSinfo.print3();				
+				OSinfo.getOStime2();				
 				break;				
             default:
                 process.stderr.write('Wrong instruction!\n');
