@@ -3,7 +3,7 @@ function getOStime(uptime) {
 	var min = Math.floor((uptime%3600)/60);
 	var sec = Math.floor(uptime - h*3600 - min*60);	
 	
-	return "Uptime: "+ h +" h "+ min +" min "+ sec +" sec.";
+	return h +" h "+ min +" min "+ sec +" sec.";
 }		
 	
 exports.getOStime = getOStime;

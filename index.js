@@ -1,5 +1,5 @@
-// Import modułów "OSinfo" i "OStime"
-var OSinfo = require('../modules/OSInfo');
+// Import modułu "OSinfo":
+var OSinfo = require('./modules/OSInfo');
 
 
 process.stdin.setEncoding('utf-8');

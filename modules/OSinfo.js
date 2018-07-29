@@ -1,9 +1,12 @@
 // Import modułu "os", dołączonego razem z pakietem instalacyjnym "Node.js":
 var os = require('os');
+// Zainstalowanie paczki "colors":
+var colors = require('colors');
 // Import danych z modułu "OStime" (w ktorym jest zmienna "getOStime"):
 var OStime = require('../modules/OStime');
 
 function getOSinfo() {
+	var colors = require('colors');
     var type = os.type();
     if(type === 'Darwin') {
         type = 'OSX';
@@ -15,11 +18,11 @@ function getOSinfo() {
     var cpu = os.cpus()[0].model;    	
 	// Info o uzytkowniku systemu: nazwą użytkownika i lokalizacją jego katalogu domowego.
     var userInfo = os.userInfo();
-    console.log('System:', type);
-    console.log('Release:', release);
-    console.log('CPU model:', cpu);
-    console.log('User name:', userInfo.username);
-    console.log('Home dir:', userInfo.homedir);
+    console.log(('System:').grey, type);
+    console.log(('Release:').red, release);
+    console.log(('CPU model:').blue, cpu);
+    console.log(('User name:').yellow, userInfo.username);
+    console.log(('Home dir:').cyan, userInfo.homedir);
 }
 
 function getOStime2() {
@@ -28,7 +31,7 @@ function getOStime2() {
 	   Przeliczony w ten sposób czas przekazujemy do zmiennej "convertedTime". */
 	var convertedTime = OStime.getOStime(uptime2);
 	
-	console.log(convertedTime);
+	console.log(('Uptime: ').green + convertedTime);
 }
 
 // Eksport funkcji getOSinfo():
